@@ -27,6 +27,9 @@ def argparser():
     group.add_argument(
         '--only-subs', action='store_true', default=0,
         help='Download subtitles only')
+    group.add_argument(
+        '--only-flv', action='store_true', default=0,
+        help='Download video only')
     parser.add_argument(
         '-l', '--login', action='store_true', default=0,
         help='Login to your Crunchyroll account')
@@ -66,7 +69,7 @@ def main():
             print('Cookies created successfuly!')
 
     for video_url in args.url:
-        downloader.get_video(video_url, args.only_subs)
+        downloader.get_video(video_url, args.only_subs, args.only_flv)
 
 if __name__ == '__main__':
     main()
