@@ -28,7 +28,16 @@ done
 
 # Delete all temporary files
 echo "Cleaning temporary files"
-find . -type f ! -iname '*.mkv' -delete
+for i in *.mkv; do
+        _filename=`basename "${i}" ".mkv"`
+        # Time to get rid of those ass and flv files
+        if [ -e "${_filename}.flv" ]; then rm "${_filename}.flv"; fi
+        if [ -e "${_filename}.ass" ]; then rm "${_filename}.ass"; fi
+        if [ -e "${_filename}.aac" ]; then rm "${_filename}.aac"; fi
+        if [ -e "${_filename}.h264" ]; then rm "${_filename}.h264"; fi
+done
+#find . -type f ! -iname '*.mkv' -delete
+
 
 # Go back to original dir
 cd "${TOP_DIR}"
