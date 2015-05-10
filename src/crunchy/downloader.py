@@ -193,7 +193,7 @@ class CrunchyDownloader(object):
             print(url)
             return url
 
-    def get_video(self, page_url, subtitles_only=False):
+    def get_video(self, page_url, subtitles_only=False, video_only=False):
         # http://www.crunchyroll.com/miss-monochrome-the-animation/episode-2-645085
         # page_url = 'http://www.crunchyroll.com/media-645085'
         if page_url.startswith('www'):
@@ -260,6 +260,10 @@ class CrunchyDownloader(object):
                 except IndexError:
                     print('The video\'s subtitles cannot be found, or are region-locked.')
                     hardcoded = True
+                    
+        if video_only:
+            print('The video subtitles are not being downloaded at the request of the user.')
+            hardcoded = True
 
         with TemporaryDirectory() as tmpdir:
             if not hardcoded:
