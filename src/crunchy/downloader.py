@@ -215,7 +215,7 @@ class CrunchyDownloader(object):
             sys.exit()
         vid_id = xmlconfig.find('media_id').string
 
-        title = re.findall('<title>(.+?)</title>', self._get_html(page_url)).pop().replace('Crunchyroll - Watch ', '')
+        title = re.findall('<title>(CrunchyRoll.+?)</title>', self._get_html(page_url)).pop().replace('Crunchyroll - Watch ', '')
         title = title.replace('/', ' - ').replace(':', '-').replace('?', '.').replace('"', '\'').strip()
 
         # Normally 'RpcApiVideoEncode_GetStreamInfo' but some episodes f*ck up and show 1080p no matter the settings
@@ -285,7 +285,7 @@ class CrunchyDownloader(object):
             print('Downloading video...')
             video_path = os.path.join(tmpdir, title+'.flv')
             cmd = [self.rtmpdump_path, '-r', url1, '-a', url2, '-f', 'WIN 11,8,800,50', '-m', '15', '-W',
-                   'http://static.ak.crunchyroll.com/flash/'+self.player_revision+'/ChromelessPlayerApp.swf',
+                   'http://static.ak.crunchyroll.com/swf/ChromelessPlayerApp.swf',
                    '-p', page_url, '-y', filename, '-o', video_path]
 
             for i in range(self.retry+1):
