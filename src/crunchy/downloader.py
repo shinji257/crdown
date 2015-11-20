@@ -215,7 +215,7 @@ class CrunchyDownloader(object):
             sys.exit()
         vid_id = xmlconfig.find('media_id').string
 
-        title = re.findall('<title>(CrunchyRoll.+?)</title>', self._get_html(page_url)).pop().replace('Crunchyroll - Watch ', '')
+        title = re.findall('<title>(Crunchyroll.+?)</title>', self._get_html(page_url)).pop().replace('Crunchyroll - Watch ', '')
         title = title.replace('/', ' - ').replace(':', '-').replace('?', '.').replace('"', '\'').strip()
 
         # Normally 'RpcApiVideoEncode_GetStreamInfo' but some episodes f*ck up and show 1080p no matter the settings
