@@ -6,9 +6,9 @@ def read(fname):
 
 setup(
     name = "crdown",
-    version = "0.6.4",
-    author = "Thiago Kenji Okada",
-    author_email = "thiago.mast3r@gmail.com",
+    version = "0.6.4.1",
+    author = "Thiago Kenji Okada (edit Robert Pendell)",
+    author_email = "thiago.mast3r@gmail.com (edit shinji@elite-systems.org)",
     description = ("Crunchyroll video downloader."),
     license = "Creative Commons Attribution-ShareAlike 3.0 Unported",
     keywords = "video crunchyroll downloader",
