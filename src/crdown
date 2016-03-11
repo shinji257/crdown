@@ -12,9 +12,9 @@ from crunchy.downloader import CrunchyDownloader
 from crunchy.login import CrunchyLogin
 from crunchy.common import yes_no_query
 
-__author__ = 'Thiago Kenji Okada'
+__author__ = 'Thiago Kenji Okada (edit Robert Pendell)'
 __appname__ = 'crdown'
-__version__ = '0.6.4'
+__version__ = '0.6.4.1'
 
 
 def argparser():
